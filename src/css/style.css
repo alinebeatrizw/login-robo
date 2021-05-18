@@ -1,0 +1,82 @@
+body{
+    background-color: #12121c;
+    font-family: 'Roboto', sans-serif;
+}
+header{
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+.hamburger{
+    text-align: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+.hr2, .hr3{
+    margin-top: -19px;
+}
+section{
+    display: flex;
+    justify-content: center;
+}
+.box-login{
+    background-color: #fff;
+    height: 432px;
+    width: 330px;
+    border-radius: 15px;
+    box-shadow: 5px 8px 19px #3a3a3a;
+}
+
+.title{
+    text-align: center;
+    margin-top: 70px;
+}
+.inputs{
+    padding: 76px;
+    margin-top: -53px;
+    
+}
+.username, .password{
+    border-block-start: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #efe3e3;
+    padding-top: 16px;
+}
+.esqueceu-senha{
+    text-align: right;
+    font-size: 9px;
+    
+}
+.esqueceu-senha a{
+    text-decoration: none;
+    color: #6d6868;
+}
+.labelPassword{
+    padding-top: 1px;
+}
+
+.btn-login{
+    text-align: center;
+    
+}
+.botao-login{
+    background-color: #05abff;
+    width: 100%;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    height: 36px;
+    box-shadow: 5px 8px 19px #4fb4e6;
+    margin-top: 27px;
+    cursor: pointer;
+}
+.create-account{
+    font-size: 10px;
+    text-align: center;
+    margin-top: 25px;
+}
+.create-account a{
+    text-decoration: none;
+}
