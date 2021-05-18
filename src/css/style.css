@@ -60,38 +60,25 @@ section{
     text-decoration: none;
     color: #6d6868;
 }
-.labelPassword{
-    padding-top: 1px;
-}
 
-.btn-login{
-    text-align: center;
-    
-    
-}
-.botao-login{
-    background-color: #05abff;
+.botao-login, .botao-login-erro{
+
     width: 100%;
     color: #fff;
     border: none;
     border-radius: 15px;
     height: 36px;
-    box-shadow: 5px 8px 19px #4fb4e6;
     margin-top: 27px;
     cursor: pointer;
 }
-
+.botao-login{
+    box-shadow: 5px 8px 19px #4fb4e6;
+    background-color: #05abff;
+}
 
 .botao-login-erro{
     background-color: red;
-    width: 100%;
-    color: #fff;
-    border: none;
-    border-radius: 15px;
-    height: 36px;
     box-shadow: 5px 8px 19px #ff0101;
-    margin-top: 27px;
-    cursor: pointer;
 }
 
 .create-account{
