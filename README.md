@@ -7,9 +7,9 @@ Este é um trabalho de um front-end de uma tela de login, desenvolvido para fins
 #### * Clone este repositório
     $ git clone <https://github.com/alinebeatrizw/login-robo>
 
-#### * Acesse a pasta do projeto 
+ * Acesse a pasta do projeto; 
 
-#### * Execute o arquivo index.html
+ * Execute o arquivo index.html.
 
 
 ## 🛠️ Construído com
@@ -20,13 +20,14 @@ Este é um trabalho de um front-end de uma tela de login, desenvolvido para fins
 
 ## 🚀 Resultados
 
-<h1 align="center">
-    <h5 >Layout normal</h5>
-    <img  src="/src/imagens/print2.png" width="70%"  /> 
-    <h5>Layout após detectar erro</h5>
-    <img  src="/src/imagens/print.png" width="70%"/>
-</h1>
+Layout inicial e Layout após erro, respectivamente.
 
+<p align="center">
+    
+  <img src="https://github.com/alinebeatrizw/login-robo/blob/main/src/imagens/print2.png" width="600px" alt="Imagem de um robo" title="Layout inicial">
+    
+  <img src="https://github.com/alinebeatrizw/login-robo/blob/main/src/imagens/print.png" width="600px" alt="Imagem de um robo"  title="Layout após erro">
+</p>
 
 ---
 ⌨️ com ❤️ por [Aline Wille](https://github.com/alinebeatrizw) 😊
