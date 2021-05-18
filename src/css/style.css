@@ -18,7 +18,11 @@ header{
 }
 section{
     display: flex;
-    justify-content: center;
+    flex-flow: column;
+}
+.img-robo{
+    align-self: center;
+    z-index: 1;
 }
 .box-login{
     background-color: #fff;
@@ -26,6 +30,9 @@ section{
     width: 330px;
     border-radius: 15px;
     box-shadow: 5px 8px 19px #3a3a3a;
+    align-self: center;
+    margin-top: -161px;
+
 }
 
 .title{
@@ -59,6 +66,7 @@ section{
 
 .btn-login{
     text-align: center;
+    
     
 }
 .botao-login{
