@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>Login</title>
 </head>
 <body>
@@ -22,7 +23,8 @@
     <section>
 
         <div class="img-robo">
-            <img src="./src/imagens/robo-inicio.png" alt="Imagem de um robo">
+            <img src="./src/imagens/robo-inicio.png" alt="Imagem de um robo" id="robo-inicio"> 
+            <img src="./src/imagens/robo-erro.png" alt="Imagem de um robo" id="robo-erro" style="display: none;">
         </div>
 
         <div class="box-login">
@@ -32,7 +34,7 @@
 
            <div class="inputs">
                <label for="username">User</label> <br>
-               <input type="text" class="username" name="username"> <br> <br>
+               <input type="text" class="username" name="username" id="username"> <br> <br>
 
                <label for="password" class="labelPassword">Senha</label> <br>
                <input type="text" name="password" class="password"> <br>
@@ -43,6 +45,7 @@
 
                 <div class="btn-login">
                     <button class="botao-login">Entrar</button>
+                    <button class="botao-login-erro" style="display: none;">Erro</button>
                 </div>
 
                 <div class="create-account">
@@ -53,5 +56,7 @@
            
         </div>
     </section>
+
+    <script src="./src/js/script.js"></script>
 </body>
 </html>

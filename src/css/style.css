@@ -80,6 +80,20 @@ section{
     margin-top: 27px;
     cursor: pointer;
 }
+
+
+.botao-login-erro{
+    background-color: red;
+    width: 100%;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    height: 36px;
+    box-shadow: 5px 8px 19px #ff0101;
+    margin-top: 27px;
+    cursor: pointer;
+}
+
 .create-account{
     font-size: 10px;
     text-align: center;
