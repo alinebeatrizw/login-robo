@@ -113,3 +113,41 @@ footer a{
     box-shadow: 0 0 14em red;
     margin-bottom: -200px;
 }
+
+
+
+
+/*********responsividade**********/
+
+@media screen and (max-width: 320px), (max-width: 375px), (max-width: 425px){
+    .img-robo img{
+        width: 330px;
+        margin-left: -15px;
+    }
+    .box-login{
+        width: 289px;
+        margin-top: -106px;
+    }
+    .title{
+        font-size: 14px;
+        margin-top: 60px;
+    }
+    .username, .password{
+        padding-top: 0px;
+        width: 133px;
+    }
+    .create-account {
+        font-size: 13px;
+    }
+    .esqueceu-senha {
+        font-size: 12px;
+    }
+    .red-blur{
+        width: 110px;
+    }
+}
+
+
+
+
+
