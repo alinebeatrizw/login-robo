@@ -43,6 +43,9 @@ section{
     align-self: center;
     margin-top: -161px;
 }
+.box-register{
+    height: 525px !important;
+}
 .title{
     text-align: center;
     margin-top: 70px;
@@ -51,7 +54,7 @@ section{
     padding: 76px;
     margin-top: -53px;
 }
-.username, .password{
+.username, .password, .email{
     border-block-start: none;
     border-left: none;
     border-right: none;
@@ -119,7 +122,7 @@ footer a{
         font-size: 12px;
         margin-top: 60px;
     }
-    .username, .password{
+    .username, .password, .email{
         padding-top: 0px;
         width: 133px;
     }
