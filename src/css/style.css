@@ -119,8 +119,8 @@ footer a{
         margin-top: -106px;
     }
     .title{
-        font-size: 12px;
-        margin-top: 60px;
+        font-size: 10.5px;
+        margin-top: 50px;
     }
     .username, .password, .email{
         padding-top: 0px;
@@ -134,6 +134,9 @@ footer a{
     }
     .red-blur{
         width: 110px;
+    }
+    .inputs{
+        margin-top: -40px;
     }
 }
 

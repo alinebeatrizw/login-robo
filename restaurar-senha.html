@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <title>Login</title>
+    <title>Alterar Senha</title>
 </head>
 <body>
     <header>
@@ -30,29 +30,31 @@
             <img src="./src/imagens/robo-erro.png" alt="Imagem de um robo" id="robo-erro" style="display: none;" >
         </div>
 
-        <div class="box-login">
+        <div class="box-login box-register">
            <div class="title">
-               <h1>Bem-Vindo(a)</h1>
+               <h1>Esqueceu a Senha?</h1>
            </div>
 
            <div class="inputs">
                <label for="username">User</label> <br>
                <input type="text" class="username" name="username" id="username"> <br> <br>
 
-               <label for="password" class="labelPassword">Senha</label> <br>
-               <input type="text" name="password" class="password"> <br>
+               <label for="email">Email</label> <br>
+               <input type="email" class="email" name="email" id="email"> <br> <br>
 
-               <div class="esqueceu-senha">
-                <a href="./restaurar-senha.html"><p>Esqueceu a senha?</p></a>
-                </div>
+               <label for="password" class="labelPassword">Nova Senha</label> <br>
+               <input type="text" name="password" class="password"> <br> <br>
+
+               <label for="password" class="labelPassword">Repita a Senha</label> <br>
+               <input type="text" name="password" class="password"> <br> 
 
                 <div class="btn-login">
-                    <button class="botao-login">Entrar</button>
+                    <button class="botao-login">Alterar Senha</button>
                     <button class="botao-login-erro" style="display: none;">Erro</button>
                 </div>
 
                 <div class="create-account">
-                    <p>Não possui uma conta?<a href="./register.html"> Cadastre-se</a></p> 
+                    <p><a href="./index.html">Voltar</a></p> 
                 </div>
            </div>
 
