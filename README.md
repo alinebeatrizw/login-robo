@@ -1,15 +1,15 @@
-# Front-End Login
-
-Este é um trabalho de um front-end de uma tela de login, desenvolvido para fins de estudo.
+# Sistema de Login e Registro
 
 ## 🔧 Testes
 
 #### * Clone este repositório
     $ git clone <https://github.com/alinebeatrizw/login-robo>
 
- * Acesse a pasta do projeto; 
+ * Mova para a pasta C:\xampp\htdocs; 
 
- * Execute o arquivo index.html.
+ * Inicialize o Apache e MySQL no XAMPP;
+ 
+ * Acesse http://localhost/tela-login-robo/index.php.
 
 
 ## 🛠️ Construído com
@@ -17,6 +17,8 @@ Este é um trabalho de um front-end de uma tela de login, desenvolvido para fins
 * [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML) 
 * [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS) 
 * [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) 
+* [PHP](https://www.php.net/) 
+* [MySQL](https://www.mysql.com/) 
 
 ## 🚀 Resultados
 
