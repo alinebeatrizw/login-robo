@@ -90,18 +90,122 @@
             if($Usuario->$msgErroConexaoBD == ""){
                 if($password==$confPassword){
                     if($Usuario->cadastrar($username,$email,$password)){
-                        echo "Cadastrado com sucesso!";
+?>
+                        <div id="msg-sucesso">
+                             Cadastrado com sucesso!
+                        </div>
+                       
+
+<?php
+
                     }else{
-                        echo "Email ja cadastrado!";
+?>                      
+ <script>
+                $('#robo-inicio').css("display", "none"); 
+                $('#robo-erro, .red-blur').css("display", "initial");
+
+
+                $('.botao-login').css("display", "none"); 
+                $('.botao-login-erro, .red-blur').css("display", "initial");
+
+
+
+                //depois de 2s o robo volta ao normal
+            setTimeout(function() {
+                $('#robo-inicio').css("display", "initial");  
+                $('#robo-erro, .red-blur').css("display", "none");
+
+                $('.botao-login').css("display", "initial"); 
+                $('.botao-login-erro, .red-blur').css("display", "none");
+                }, 4000);
+            </script>
+
+                        <div class="msg-erro">
+                            Email ja cadastrado!
+                        </div> 
+                        
+<?php
                     }
                 }else{
-                    echo "As senhas não correspondem!";
+?>                  
+
+
+<script>
+                $('#robo-inicio').css("display", "none"); 
+                $('#robo-erro, .red-blur').css("display", "initial");
+
+
+                $('.botao-login').css("display", "none"); 
+                $('.botao-login-erro, .red-blur').css("display", "initial");
+
+
+
+                //depois de 2s o robo volta ao normal
+            setTimeout(function() {
+                $('#robo-inicio').css("display", "initial");  
+                $('#robo-erro, .red-blur').css("display", "none");
+
+                $('.botao-login').css("display", "initial"); 
+                $('.botao-login-erro, .red-blur').css("display", "none");
+                }, 4000);
+            </script>
+                    <div class="msg-erro">
+                        As senhas não correspondem!
+                    </div>
+<?php
                 }
             }else{
-                echo "Erro: ".$Usuario->$msgErroConexaoBD;
+?>
+                 <script>
+                $('#robo-inicio').css("display", "none"); 
+                $('#robo-erro, .red-blur').css("display", "initial");
+
+
+                $('.botao-login').css("display", "none"); 
+                $('.botao-login-erro, .red-blur').css("display", "initial");
+
+
+
+                //depois de 2s o robo volta ao normal
+            setTimeout(function() {
+                $('#robo-inicio').css("display", "initial");  
+                $('#robo-erro, .red-blur').css("display", "none");
+
+                $('.botao-login').css("display", "initial"); 
+                $('.botao-login-erro, .red-blur').css("display", "none");
+                }, 4000);
+            </script>
+                <div class="msg-erro">
+                    <?php echo "Erro: ".$Usuario->$msgErroConexaoBD;?>
+                </div>
+<?php
             }
         }else{
-            echo "Preencha todos os campos!";
+?>
+            <script>
+                $('#robo-inicio').css("display", "none"); 
+                $('#robo-erro, .red-blur').css("display", "initial");
+
+
+                $('.botao-login').css("display", "none"); 
+                $('.botao-login-erro, .red-blur').css("display", "initial");
+
+
+
+                //depois de 2s o robo volta ao normal
+            setTimeout(function() {
+                $('#robo-inicio').css("display", "initial");  
+                $('#robo-erro, .red-blur').css("display", "none");
+
+                $('.botao-login').css("display", "initial"); 
+                $('.botao-login-erro, .red-blur').css("display", "none");
+                }, 4000);
+            </script>
+                <div class="msg-erro">
+                    Preencha todos os campos!
+                </div>
+           
+<?php
         }
     }
 ?>

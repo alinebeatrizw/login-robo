@@ -1,3 +1,5 @@
+/** 
+
 $(document).on('click', '.botao-login', function(){ 
     $('#robo-inicio').css("display", "none"); 
     $('#robo-erro, .red-blur').css("display", "initial");
@@ -16,4 +18,4 @@ $(document).on('click', '.botao-login', function(){
         $('.botao-login-erro, .red-blur').css("display", "none");
         }, 2000);
 });
-
+*/
