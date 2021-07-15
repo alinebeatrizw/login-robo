@@ -1,7 +1,7 @@
 <?php
 
-    require_once 'classes/Usuario.php';
-    $Usuario = new Usuario;
+require_once 'classes/Usuario.php';
+$Usuario = new Usuario;
 
 ?>
 
@@ -30,10 +30,10 @@
 
     <section>
 
- 
+
         <div class="red-blur" style="display: none;"></div>
         <div class="img-robo">
-            <img src="./src/imagens/robo-inicio.png" alt="Imagem de um robo" id="robo-inicio" > 
+            <img src="./src/imagens/robo-inicio.png" alt="Imagem de um robo" id="robo-inicio" >
             <img src="./src/imagens/robo-erro.png" alt="Imagem de um robo" id="robo-erro" style="display: none;" >
         </div>
 
@@ -62,12 +62,12 @@
                     </div>
 
                     <div class="create-account">
-                        <p>Já possui uma conta?<a href="./index.html"> Entre</a></p> 
+                        <p>Já possui uma conta?<a href="./index.html"> Entre</a></p>
                     </div>
                 </form>
            </div>
 
-           
+
         </div>
     </section>
 
@@ -77,75 +77,75 @@
 
 <?php
 
-    //verificar se clicou no botao
-    if(isset($_POST['username'])){
-        $username = addslashes($_POST['username']);
-        $email = addslashes($_POST['email']);
-        $password = addslashes($_POST['password']);
-        $confPassword = addslashes($_POST['confPassword']);
+//verificar se clicou no botao
+if (isset($_POST['username'])) {
+    $username = addslashes($_POST['username']);
+    $email = addslashes($_POST['email']);
+    $password = addslashes($_POST['password']);
+    $confPassword = addslashes($_POST['confPassword']);
 
-        //verificar se está tudo preenchido
-        if(!empty($username) && !empty($email) && !empty($password) && !empty($confPassword)){
-            $Usuario->conectar("projeto_robo", "localhost", "root", "");
-            if($Usuario->$msgErroConexaoBD == ""){
-                if($password==$confPassword){
-                    if($Usuario->cadastrar($username,$email,$password)){
-?>
+    //verificar se está tudo preenchido
+    if (!empty($username) && !empty($email) && !empty($password) && !empty($confPassword)) {
+        $Usuario->conectar("projeto_robo", "localhost", "root", "");
+        if ($Usuario->$msgErroConexaoBD == "") {
+            if ($password == $confPassword) {
+                if ($Usuario->cadastrar($username, $email, $password)) {
+                    ?>
                         <div id="msg-sucesso">
                              Cadastrado com sucesso!
                         </div>
-                       
+
 
 <?php
 
-                    }else{
-?>                      
+                } else {
+                    ?>
  <script>
-                $('#robo-inicio').css("display", "none"); 
+                $('#robo-inicio').css("display", "none");
                 $('#robo-erro, .red-blur').css("display", "initial");
 
 
-                $('.botao-login').css("display", "none"); 
+                $('.botao-login').css("display", "none");
                 $('.botao-login-erro, .red-blur').css("display", "initial");
 
 
 
                 //depois de 2s o robo volta ao normal
             setTimeout(function() {
-                $('#robo-inicio').css("display", "initial");  
+                $('#robo-inicio').css("display", "initial");
                 $('#robo-erro, .red-blur').css("display", "none");
 
-                $('.botao-login').css("display", "initial"); 
+                $('.botao-login').css("display", "initial");
                 $('.botao-login-erro, .red-blur').css("display", "none");
                 }, 4000);
             </script>
 
                         <div class="msg-erro">
                             Email ja cadastrado!
-                        </div> 
-                        
+                        </div>
+
 <?php
-                    }
-                }else{
-?>                  
+}
+            } else {
+                ?>
 
 
 <script>
-                $('#robo-inicio').css("display", "none"); 
+                $('#robo-inicio').css("display", "none");
                 $('#robo-erro, .red-blur').css("display", "initial");
 
 
-                $('.botao-login').css("display", "none"); 
+                $('.botao-login').css("display", "none");
                 $('.botao-login-erro, .red-blur').css("display", "initial");
 
 
 
                 //depois de 2s o robo volta ao normal
             setTimeout(function() {
-                $('#robo-inicio').css("display", "initial");  
+                $('#robo-inicio').css("display", "initial");
                 $('#robo-erro, .red-blur').css("display", "none");
 
-                $('.botao-login').css("display", "initial"); 
+                $('.botao-login').css("display", "initial");
                 $('.botao-login-erro, .red-blur').css("display", "none");
                 }, 4000);
             </script>
@@ -153,61 +153,61 @@
                         As senhas não correspondem!
                     </div>
 <?php
-                }
-            }else{
-?>
+}
+        } else {
+            ?>
                  <script>
-                $('#robo-inicio').css("display", "none"); 
+                $('#robo-inicio').css("display", "none");
                 $('#robo-erro, .red-blur').css("display", "initial");
 
 
-                $('.botao-login').css("display", "none"); 
+                $('.botao-login').css("display", "none");
                 $('.botao-login-erro, .red-blur').css("display", "initial");
 
 
 
                 //depois de 2s o robo volta ao normal
             setTimeout(function() {
-                $('#robo-inicio').css("display", "initial");  
+                $('#robo-inicio').css("display", "initial");
                 $('#robo-erro, .red-blur').css("display", "none");
 
-                $('.botao-login').css("display", "initial"); 
+                $('.botao-login').css("display", "initial");
                 $('.botao-login-erro, .red-blur').css("display", "none");
                 }, 4000);
             </script>
                 <div class="msg-erro">
-                    <?php echo "Erro: ".$Usuario->$msgErroConexaoBD;?>
+                    <?php echo "Erro: " . $Usuario->$msgErroConexaoBD; ?>
                 </div>
 <?php
-            }
-        }else{
-?>
+}
+    } else {
+        ?>
             <script>
-                $('#robo-inicio').css("display", "none"); 
+                $('#robo-inicio').css("display", "none");
                 $('#robo-erro, .red-blur').css("display", "initial");
 
 
-                $('.botao-login').css("display", "none"); 
+                $('.botao-login').css("display", "none");
                 $('.botao-login-erro, .red-blur').css("display", "initial");
 
 
 
                 //depois de 2s o robo volta ao normal
             setTimeout(function() {
-                $('#robo-inicio').css("display", "initial");  
+                $('#robo-inicio').css("display", "initial");
                 $('#robo-erro, .red-blur').css("display", "none");
 
-                $('.botao-login').css("display", "initial"); 
+                $('.botao-login').css("display", "initial");
                 $('.botao-login-erro, .red-blur').css("display", "none");
                 }, 4000);
             </script>
                 <div class="msg-erro">
                     Preencha todos os campos!
                 </div>
-           
+
 <?php
-        }
-    }
+}
+}
 ?>
 
     <script src="./src/js/script.js"></script>
