@@ -99,26 +99,10 @@ if (isset($_POST['username'])) {
 <?php
 
                 } else {
+                    echo '<script>
+                    window.onload = function(){ mudaCor(); };
+                    </script>';
                     ?>
- <script>
-                $('#robo-inicio').css("display", "none");
-                $('#robo-erro, .red-blur').css("display", "initial");
-
-
-                $('.botao-login').css("display", "none");
-                $('.botao-login-erro, .red-blur').css("display", "initial");
-
-
-
-                //depois de 2s o robo volta ao normal
-            setTimeout(function() {
-                $('#robo-inicio').css("display", "initial");
-                $('#robo-erro, .red-blur').css("display", "none");
-
-                $('.botao-login').css("display", "initial");
-                $('.botao-login-erro, .red-blur').css("display", "none");
-                }, 4000);
-            </script>
 
                         <div class="msg-erro">
                             Email ja cadastrado!
@@ -127,80 +111,30 @@ if (isset($_POST['username'])) {
 <?php
 }
             } else {
+                echo '<script>
+                window.onload = function(){ mudaCor(); };
+                </script>';
                 ?>
-
-
-<script>
-                $('#robo-inicio').css("display", "none");
-                $('#robo-erro, .red-blur').css("display", "initial");
-
-
-                $('.botao-login').css("display", "none");
-                $('.botao-login-erro, .red-blur').css("display", "initial");
-
-
-
-                //depois de 2s o robo volta ao normal
-            setTimeout(function() {
-                $('#robo-inicio').css("display", "initial");
-                $('#robo-erro, .red-blur').css("display", "none");
-
-                $('.botao-login').css("display", "initial");
-                $('.botao-login-erro, .red-blur').css("display", "none");
-                }, 4000);
-            </script>
                     <div class="msg-erro">
                         As senhas não correspondem!
                     </div>
 <?php
 }
         } else {
+            echo '<script>
+            window.onload = function(){ mudaCor(); };
+            </script>';
             ?>
-                 <script>
-                $('#robo-inicio').css("display", "none");
-                $('#robo-erro, .red-blur').css("display", "initial");
-
-
-                $('.botao-login').css("display", "none");
-                $('.botao-login-erro, .red-blur').css("display", "initial");
-
-
-
-                //depois de 2s o robo volta ao normal
-            setTimeout(function() {
-                $('#robo-inicio').css("display", "initial");
-                $('#robo-erro, .red-blur').css("display", "none");
-
-                $('.botao-login').css("display", "initial");
-                $('.botao-login-erro, .red-blur').css("display", "none");
-                }, 4000);
-            </script>
                 <div class="msg-erro">
                     <?php echo "Erro: " . $Usuario->$msgErroConexaoBD; ?>
                 </div>
 <?php
 }
     } else {
+        echo '<script>
+        window.onload = function(){ mudaCor(); };
+        </script>';
         ?>
-            <script>
-                $('#robo-inicio').css("display", "none");
-                $('#robo-erro, .red-blur').css("display", "initial");
-
-
-                $('.botao-login').css("display", "none");
-                $('.botao-login-erro, .red-blur').css("display", "initial");
-
-
-
-                //depois de 2s o robo volta ao normal
-            setTimeout(function() {
-                $('#robo-inicio').css("display", "initial");
-                $('#robo-erro, .red-blur').css("display", "none");
-
-                $('.botao-login').css("display", "initial");
-                $('.botao-login-erro, .red-blur').css("display", "none");
-                }, 4000);
-            </script>
                 <div class="msg-erro">
                     Preencha todos os campos!
                 </div>
@@ -209,7 +143,34 @@ if (isset($_POST['username'])) {
 }
 }
 ?>
+    <script>
+        function mudaCor() {
+            //troca o robo azul pelo robo vermelho
+            document.getElementById("robo-inicio").style.display = "none";
+            document.getElementById("robo-erro").style.display = "initial";
+            //faz aparecer o blur vermelho atras do robp
+            document.getElementById("red-blur").style.display = "initial";
 
+
+            //faz o botao ficar vermelho
+            document.getElementById("botao-login").style.display = "none";
+            document.getElementById("botao-login-erro").style.display = "initial";
+            document.getElementById("red-blur").style.display = "initial";
+
+
+            //depois de 2s o robo volta ao normal
+            setTimeout(function() {
+                document.getElementById("robo-inicio").style.display = "initial";
+                document.getElementById("robo-erro").style.display = "none";
+                document.getElementById("red-blur").style.display = "none";
+
+
+                document.getElementById("botao-login").style.display = "initial";
+                document.getElementById("botao-login-erro").style.display = "none";
+                document.getElementById("red-blur").style.display = "none";
+            }, 2000);
+            }
+    </script>
     <script src="./src/js/script.js"></script>
 </body>
 </html>

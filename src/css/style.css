@@ -61,14 +61,6 @@ section{
     border-bottom-color: #efe3e3;
     padding-top: 16px;
 }
-.esqueceu-senha{
-    text-align: right;
-    font-size: 9px; 
-}
-.esqueceu-senha a{
-    text-decoration: none;
-    color: #6d6868;
-}
 
 .botao-login, .botao-login-erro{
     width: 100%;
@@ -128,9 +120,6 @@ footer a{
     }
     .create-account {
         font-size: 13px;
-    }
-    .esqueceu-senha {
-        font-size: 12px;
     }
     .red-blur{
         width: 110px;

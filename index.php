@@ -3,6 +3,8 @@
 require_once 'classes/Usuario.php';
 $Usuario = new Usuario;
 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -30,7 +32,7 @@ $Usuario = new Usuario;
     <section>
 
 
-        <div class="red-blur" style="display: none;"></div>
+        <div class="red-blur" id="red-blur" style="display: none;"></div>
         <div class="img-robo">
             <img src="./src/imagens/robo-inicio.png" alt="Imagem de um robo" id="robo-inicio" >
             <img src="./src/imagens/robo-erro.png" alt="Imagem de um robo" id="robo-erro" style="display: none;" >
@@ -54,8 +56,8 @@ $Usuario = new Usuario;
                     </div>
 
                     <div class="btn-login">
-                        <button class="botao-login">Entrar</button>
-                        <button class="botao-login-erro" style="display: none;">Erro</button>
+                        <button class="botao-login" id="botao-login">Entrar</button>
+                        <button class="botao-login-erro" id="botao-login-erro" style="display: none;">Erro</button>
                     </div>
 
                     <div class="create-account">
@@ -66,7 +68,7 @@ $Usuario = new Usuario;
 
 
         </div>
-    </section>
+   
 
 <?php
 
@@ -83,26 +85,10 @@ if (isset($_POST['username'])) {
             if ($Usuario->logar($username, $password)) {
                 header("location: testeLogin.php");
             } else {
-                ?>
-            <script>
-                $('#robo-inicio').css("display", "none");
-                $('#robo-erro, .red-blur').css("display", "initial");
-
-
-                $('.botao-login').css("display", "none");
-                $('.botao-login-erro, .red-blur').css("display", "initial");
-
-
-
-                //depois de 2s o robo volta ao normal
-            setTimeout(function() {
-                $('#robo-inicio').css("display", "initial");
-                $('#robo-erro, .red-blur').css("display", "none");
-
-                $('.botao-login').css("display", "initial");
-                $('.botao-login-erro, .red-blur').css("display", "none");
-                }, 4000);
-            </script>
+                echo '<script>
+                window.onload = function(){ mudaCor(); };
+                </script>';
+                    ?>
                 <div class="msg-erro">
                     Email ou senha incorreta!
                 </div>
@@ -110,52 +96,21 @@ if (isset($_POST['username'])) {
 <?php
 }
         } else {
-            ?>
-                 <script>
-                $('#robo-inicio').css("display", "none");
-                $('#robo-erro, .red-blur').css("display", "initial");
-
-
-                $('.botao-login').css("display", "none");
-                $('.botao-login-erro, .red-blur').css("display", "initial");
-
-
-
-                //depois de 2s o robo volta ao normal
-            setTimeout(function() {
-                $('#robo-inicio').css("display", "initial");
-                $('#robo-erro, .red-blur').css("display", "none");
-
-                $('.botao-login').css("display", "initial");
-                $('.botao-login-erro, .red-blur').css("display", "none");
-                }, 4000);
-            </script>
-                <div class="msg-erro">
-                    <?php echo "Erro: " . $Usuario->$msgErroConexaoBD; ?>
-                </div>
+            echo '<script>
+            window.onload = function(){ mudaCor(); };
+            </script>';
+                ?>
+                    <div class="msg-erro">
+                        <?php echo "Erro: " . $Usuario->$msgErroConexaoBD; ?>
+                    </div>
 <?php
 }
     } else {
-        ?>
-            <script>
-                $('#robo-inicio').css("display", "none");
-                $('#robo-erro, .red-blur').css("display", "initial");
-
-
-                $('.botao-login').css("display", "none");
-                $('.botao-login-erro, .red-blur').css("display", "initial");
-
-
-
-                //depois de 2s o robo volta ao normal
-            setTimeout(function() {
-                $('#robo-inicio').css("display", "initial");
-                $('#robo-erro, .red-blur').css("display", "none");
-
-                $('.botao-login').css("display", "initial");
-                $('.botao-login-erro, .red-blur').css("display", "none");
-                }, 4000);
-            </script>
+        
+        echo '<script>
+        window.onload = function(){ mudaCor(); };
+        </script>';
+            ?>
                 <div class="msg-erro">
                     Preencha todos os campos!
                 </div>
@@ -164,9 +119,43 @@ if (isset($_POST['username'])) {
 }
 }
 ?>
+ </section>
     <footer>
         <p>Com ❤️ por <a href="https://github.com/alinebeatrizw">Aline Wille</a> 😊</p>
     </footer>
+
+
+    <script>
+        function mudaCor() {
+            //troca o robo azul pelo robo vermelho
+            document.getElementById("robo-inicio").style.display = "none";
+            document.getElementById("robo-erro").style.display = "initial";
+            //faz aparecer o blur vermelho atras do robp
+            document.getElementById("red-blur").style.display = "initial";
+
+
+            //faz o botao ficar vermelho
+            document.getElementById("botao-login").style.display = "none";
+            document.getElementById("botao-login-erro").style.display = "initial";
+            document.getElementById("red-blur").style.display = "initial";
+
+
+            //depois de 2s o robo volta ao normal
+            setTimeout(function() {
+                document.getElementById("robo-inicio").style.display = "initial";
+                document.getElementById("robo-erro").style.display = "none";
+                document.getElementById("red-blur").style.display = "none";
+
+
+                document.getElementById("botao-login").style.display = "initial";
+                document.getElementById("botao-login-erro").style.display = "none";
+                document.getElementById("red-blur").style.display = "none"; 
+            }, 2000);
+            }
+    </script>
     <script src="./src/js/script.js"></script>
+
+
+
 </body>
 </html>
