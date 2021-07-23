@@ -1,12 +1,12 @@
 <?php
 
-require_once 'classes/Usuario.php';
-$Usuario = new Usuario;
+    require_once 'classes/Usuario.php';
+    $Usuario = new Usuario;
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +19,7 @@ $Usuario = new Usuario;
     <title>Registre-se</title>
 </head>
 <body>
+
     <header>
         <div class="logo">LOGO</div>
         <div class="hamburger">
@@ -29,9 +30,7 @@ $Usuario = new Usuario;
     </header>
 
     <section>
-
-
-        <div class="red-blur" style="display: none;"></div>
+    <div class="red-blur" id="red-blur" style="display: none;"></div>
         <div class="img-robo">
             <img src="./src/imagens/robo-inicio.png" alt="Imagem de um robo" id="robo-inicio" >
             <img src="./src/imagens/robo-erro.png" alt="Imagem de um robo" id="robo-erro" style="display: none;" >
@@ -57,54 +56,50 @@ $Usuario = new Usuario;
                     <input type="text" name="confPassword" class="password" maxlength="32"> <br>
 
                     <div class="btn-login">
-                        <button class="botao-login">Cadastrar</button>
-                        <button class="botao-login-erro" style="display: none;">Erro</button>
+                        <button class="botao-login" id="botao-login">Cadastrar</button>
+                        <button class="botao-login-erro" id="botao-login-erro" style="display: none;">Erro</button>
                     </div>
 
                     <div class="create-account">
-                        <p>Já possui uma conta?<a href="./index.html"> Entre</a></p>
+                        <p>Já possui uma conta?<a href="./index.php"> Entre</a></p>
                     </div>
                 </form>
            </div>
-
-
         </div>
-    </section>
 
-    <footer>
-        <p>Com ❤️ por <a href="https://github.com/alinebeatrizw">Aline Wille</a> 😊</p>
-    </footer>
+
 
 <?php
 
-//verificar se clicou no botao
-if (isset($_POST['username'])) {
-    $username = addslashes($_POST['username']);
-    $email = addslashes($_POST['email']);
-    $password = addslashes($_POST['password']);
-    $confPassword = addslashes($_POST['confPassword']);
+    //verificar se clicou no botao
+    if (isset($_POST['username'])) {
+        $username = addslashes($_POST['username']);
+        $email = addslashes($_POST['email']);
+        $password = addslashes($_POST['password']);
+        $confPassword = addslashes($_POST['confPassword']);
 
-    //verificar se está tudo preenchido
-    if (!empty($username) && !empty($email) && !empty($password) && !empty($confPassword)) {
-        $Usuario->conectar("projeto_robo", "localhost", "root", "");
-        if ($Usuario->$msgErroConexaoBD == "") {
-            if ($password == $confPassword) {
-                if ($Usuario->cadastrar($username, $email, $password)) {
-                    ?>
-                        <div id="msg-sucesso">
+        //verificar se está tudo preenchido
+        if (!empty($username) && !empty($email) && !empty($password) && !empty($confPassword)) {
+            $Usuario->conectar("projeto_robo", "localhost", "root", "");
+            if ($Usuario->$msgErroConexaoBD == "") {
+                if ($password == $confPassword) {
+                    if ($Usuario->cadastrar($username, $email, $password)) {
+                    
+?>
+                        <div id="msg-sucesso" >
                              Cadastrado com sucesso!
                         </div>
 
 
 <?php
 
-                } else {
-                    echo '<script>
-                    window.onload = function(){ mudaCor(); };
-                    </script>';
-                    ?>
+                    } else {
+                        echo '<script>
+                        window.onload = function(){ mudaCor(); };
+                        </script>';
+?>
 
-                        <div class="msg-erro">
+                        <div class="msg-erro" id="msg-erro">
                             Email ja cadastrado!
                         </div>
 
@@ -114,8 +109,8 @@ if (isset($_POST['username'])) {
                 echo '<script>
                 window.onload = function(){ mudaCor(); };
                 </script>';
-                ?>
-                    <div class="msg-erro">
+?>
+                    <div class="msg-erro" id="msg-erro">
                         As senhas não correspondem!
                     </div>
 <?php
@@ -124,8 +119,8 @@ if (isset($_POST['username'])) {
             echo '<script>
             window.onload = function(){ mudaCor(); };
             </script>';
-            ?>
-                <div class="msg-erro">
+?>
+                <div class="msg-erro" id="msg-erro">
                     <?php echo "Erro: " . $Usuario->$msgErroConexaoBD; ?>
                 </div>
 <?php
@@ -134,15 +129,22 @@ if (isset($_POST['username'])) {
         echo '<script>
         window.onload = function(){ mudaCor(); };
         </script>';
-        ?>
-                <div class="msg-erro">
-                    Preencha todos os campos!
-                </div>
+?>
+            <div class="msg-erro" id="msg-erro">
+                Preencha todos os campos!
+            </div>
 
 <?php
-}
+    }
 }
 ?>
+    </section>
+    <footer>
+        <p>Com ❤️ por <a href="https://github.com/alinebeatrizw">Aline Wille</a> 😊</p>
+    </footer>
+
+
+
     <script>
         function mudaCor() {
             //troca o robo azul pelo robo vermelho
@@ -167,8 +169,10 @@ if (isset($_POST['username'])) {
 
                 document.getElementById("botao-login").style.display = "initial";
                 document.getElementById("botao-login-erro").style.display = "none";
-                document.getElementById("red-blur").style.display = "none";
-            }, 2000);
+                document.getElementById("red-blur").style.display = "none"; 
+
+                document.getElementById("msg-erro").style.display = "none"; 
+            }, 5000);
             }
     </script>
     <script src="./src/js/script.js"></script>

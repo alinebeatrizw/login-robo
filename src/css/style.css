@@ -1,3 +1,4 @@
+@import url('http://fonts.cdnfonts.com/css/anurati');
 body{
     background-color: #12121c;
     font-family: 'Roboto', sans-serif;
@@ -24,6 +25,7 @@ section{
     align-self: center;
     z-index: 1;
     margin-top: -19px;
+    display: flex;
 }
 .red-blur{
     background-color: red;
@@ -33,6 +35,28 @@ section{
     align-self: center;
     box-shadow: 0 0 14em red;
     margin-bottom: -200px;
+}
+.blue-blur{
+    width: 169px;
+    border-radius: 100%;
+    height: 200px;
+    align-self: center;
+    box-shadow: -6px 0 5em #fff;
+    margin-bottom: -200px;
+}
+.txt-bem, .txt-vindo{
+    font-size: 60px;
+    margin-top: 77px;
+    font-family: 'Anurati', sans-serif;
+    text-shadow: 5px 8px 19px #3a3a3a;
+                                                
+}
+.txt-bem{
+    margin-left: 40px;
+    margin-right: -116px;
+}
+.txt-vindo{
+    margin-left: -130px;
 }
 .box-login{
     background-color: #fff;
@@ -60,6 +84,14 @@ section{
     border-right: none;
     border-bottom-color: #efe3e3;
     padding-top: 16px;
+}
+.esqueceu-senha{
+    text-align: right;
+    font-size: 9px; 
+}
+.esqueceu-senha a{
+    text-decoration: none;
+    color: #6d6868;
 }
 
 .botao-login, .botao-login-erro{
@@ -97,7 +129,18 @@ footer a{
     text-decoration: none;
     color: #fff;
 }
-
+.msg-erro{
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-weight: bold;
+    width: 330px;
+    border-radius: 15px;
+   align-self: center;
+   height: 40px;
+   align-items: center;
+    background: linear-gradient(90deg, rgba(2,0,36,0.8015405991498161) 0%, rgba(36,36,55,1) 100%, rgba(0,212,255,1) 100%);
+}
 
 /*********responsividade**********/
 
@@ -120,6 +163,9 @@ footer a{
     }
     .create-account {
         font-size: 13px;
+    }
+    .esqueceu-senha {
+        font-size: 12px;
     }
     .red-blur{
         width: 110px;

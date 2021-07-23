@@ -1,11 +1,8 @@
 <?php
-
-require_once 'classes/Usuario.php';
-$Usuario = new Usuario;
-
-
-
+    require_once 'classes/Usuario.php';
+    $Usuario = new Usuario;
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -30,8 +27,6 @@ $Usuario = new Usuario;
     </header>
 
     <section>
-
-
         <div class="red-blur" id="red-blur" style="display: none;"></div>
         <div class="img-robo">
             <img src="./src/imagens/robo-inicio.png" alt="Imagem de um robo" id="robo-inicio" >
@@ -52,7 +47,7 @@ $Usuario = new Usuario;
                    <input type="text" name="password" class="password"> <br>
 
                    <div class="esqueceu-senha">
-                    <a href="./restaurar-senha.php"><p>Esqueceu a senha?</p></a>
+                    <a href="#"><p>Esqueceu a senha?</p></a>
                     </div>
 
                     <div class="btn-login">
@@ -65,53 +60,50 @@ $Usuario = new Usuario;
                     </div>
                 </form>
            </div>
-
-
         </div>
    
-
 <?php
 
 //verificar se clicou no botao
-if (isset($_POST['username'])) {
+    if (isset($_POST['username'])) {
 
-    $username = addslashes($_POST['username']);
-    $password = addslashes($_POST['password']);
+        $username = addslashes($_POST['username']);
+        $password = addslashes($_POST['password']);
 
-    //verificar se está tudo preenchido
-    if (!empty($username) && !empty($password)) {
-        $Usuario->conectar("projeto_robo", "localhost", "root", "");
-        if ($Usuario->$msgErroConexaoBD == "") {
-            if ($Usuario->logar($username, $password)) {
+        //verificar se está tudo preenchido
+        if (!empty($username) && !empty($password)) {
+            $Usuario->conectar("projeto_robo", "localhost", "root", "");
+            if ($Usuario->$msgErroConexaoBD == "") {
+                if ($Usuario->logar($username, $password)) {
                 header("location: testeLogin.php");
-            } else {
-                echo '<script>
-                window.onload = function(){ mudaCor(); };
-                </script>';
-                    ?>
-                <div class="msg-erro">
-                    Email ou senha incorreta!
-                </div>
+                } else {
+                    echo '<script>
+                    window.onload = function(){ mudaCor(); };
+                    </script>';
+?>
+                    <div class="msg-erro" id="msg-erro">
+                        Email ou senha incorreta!
+                    </div>
 
+<?php
+}
+                } else {
+                    echo '<script>
+                    window.onload = function(){ mudaCor(); };
+                    </script>';
+?>
+                        <div class="msg-erro" id="msg-erro">
+                            <?php echo "Erro: " . $Usuario->$msgErroConexaoBD; ?>
+                        </div>
 <?php
 }
         } else {
-            echo '<script>
-            window.onload = function(){ mudaCor(); };
-            </script>';
-                ?>
-                    <div class="msg-erro">
-                        <?php echo "Erro: " . $Usuario->$msgErroConexaoBD; ?>
-                    </div>
-<?php
-}
-    } else {
         
-        echo '<script>
-        window.onload = function(){ mudaCor(); };
-        </script>';
-            ?>
-                <div class="msg-erro">
+                echo '<script>
+                window.onload = function(){ mudaCor(); };
+                </script>';
+?>
+                <div class="msg-erro" id="msg-erro">
                     Preencha todos os campos!
                 </div>
 
@@ -119,7 +111,8 @@ if (isset($_POST['username'])) {
 }
 }
 ?>
- </section>
+
+    </section>
     <footer>
         <p>Com ❤️ por <a href="https://github.com/alinebeatrizw">Aline Wille</a> 😊</p>
     </footer>
@@ -150,12 +143,11 @@ if (isset($_POST['username'])) {
                 document.getElementById("botao-login").style.display = "initial";
                 document.getElementById("botao-login-erro").style.display = "none";
                 document.getElementById("red-blur").style.display = "none"; 
-            }, 2000);
+
+                document.getElementById("msg-erro").style.display = "none"; 
+            }, 5000);
             }
     </script>
     <script src="./src/js/script.js"></script>
-
-
-
 </body>
 </html>

@@ -15,8 +15,8 @@ class Usuario{
             global $msgErroConexaoBD;
             $msgErroConexaoBD = $e->getMessage();
         }
-        
     }
+    
     public function cadastrar($username, $email, $password){
         global $pdo;
 
@@ -38,6 +38,8 @@ class Usuario{
         return true;
         }   
     }
+
+    
     public function logar($username, $password){
         global $pdo;
 
@@ -58,7 +60,5 @@ class Usuario{
         }
     }
 }
-
-
 
 ?>
